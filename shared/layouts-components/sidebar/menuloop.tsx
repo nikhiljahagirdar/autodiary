@@ -51,8 +51,9 @@ const Menuloop = ({ MenuItems, level, handleToMenu, HoverToggleInnerMenuFn }: an
             key={index}
           >
             {firstlevel?.type === "link" ?
-              <Link href={firstlevel.path} className={`side-menu__item ${firstlevel?.selected ? 'active' : ''}`}>{firstlevel.icon}
-                <span className=""> {firstlevel.title} {firstlevel.badgetxt ? (<span className={firstlevel.class}> {firstlevel.badgetxt}</span>
+              <Link href={firstlevel.path} className={`side-menu__item ${firstlevel?.selected ? 'active' : ''}`}>
+                {firstlevel.icon}
+                <span className="side-menu__label ms-2"> {firstlevel.title} {firstlevel.badgetxt ? (<span className={firstlevel.class}> {firstlevel.badgetxt}</span>
                 ) : (
                   ""
                 )}
@@ -62,7 +63,7 @@ const Menuloop = ({ MenuItems, level, handleToMenu, HoverToggleInnerMenuFn }: an
             {firstlevel?.type === "empty" ?
               <Link href="#!" className={`side-menu__item`} onClick={handleClick}>
                 {firstlevel.icon}
-                {firstlevel.title}
+                <span className="side-menu__label ms-2">{firstlevel.title}</span>
               </Link>
               : ""}
             {firstlevel?.type === "sub" ?

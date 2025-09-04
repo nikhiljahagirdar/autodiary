@@ -81,7 +81,7 @@ const Cover: React.FC<CoverProps> = () => {
                                                 <Form.Control
                                                     type="email"
                                                     className="form-control "
-                                                    id="signup-firstname"
+                                                    id="signin-email-cover"
                                                     placeholder="Enter Email ID"
                                                     value={values.email}
                                                     onChange={(e) => setValues({ ...values, email: e.target.value })}
@@ -95,7 +95,7 @@ const Cover: React.FC<CoverProps> = () => {
                                                     <Form.Control
                                                         type={values.showPassword ? "text" : "password"}
                                                         className="form-control "
-                                                        id="signup-password"
+                                                        id="signin-password-cover"
                                                         placeholder="Password"
                                                         value={values.password}
                                                         onChange={(e) => setValues({ ...values, password: e.target.value })}

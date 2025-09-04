@@ -1,0 +1,84 @@
+/* Fix submenu text display and link colors */
+.app-sidebar .side-menu__item,
+.app-sidebar .side-menu__item * {
+  color: #495057 !important;
+}
+
+.app-sidebar .side-menu__item:hover,
+.app-sidebar .side-menu__item:hover * {
+  color: #000000 !important;
+}
+
+.app-sidebar .side-menu__item.active,
+.app-sidebar .side-menu__item.active * {
+  color: #000000 !important;
+  background-color: #f8f9fa !important;
+}
+
+.app-sidebar .side-menu__label {
+  display: inline-block !important;
+  margin-left: 8px !important;
+  color: inherit !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.app-sidebar .slide-menu .side-menu__item {
+  padding-left: 2rem !important;
+  color: #495057 !important;
+}
+
+.app-sidebar .slide-menu .side-menu__item:hover {
+  color: #000000 !important;
+}
+
+.app-sidebar .slide-menu .side-menu__label {
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: inherit !important;
+}
+
+/* Icon colors */
+.app-sidebar .side-menu__icon {
+  color: #495057 !important;
+  font-size: 16px !important;
+}
+
+.app-sidebar .side-menu__item:hover .side-menu__icon {
+  color: #000000 !important;
+}
+
+.app-sidebar .side-menu__item.active .side-menu__icon {
+  color: #000000 !important;
+}
+
+/* Allow submenu functionality to work normally */
+.app-sidebar .slide-menu .side-menu__item {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Override any theme-specific hiding */
+[data-theme-mode="dark"] .app-sidebar .side-menu__label,
+[data-theme-mode="light"] .app-sidebar .side-menu__label {
+  color: #495057 !important;
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+[data-theme-mode="dark"] .app-sidebar .side-menu__item:hover .side-menu__label,
+[data-theme-mode="light"] .app-sidebar .side-menu__item:hover .side-menu__label {
+  color: #000000 !important;
+}
+
+/* Hide main menu titles (including Dashboard), keep submenu titles */
+.app-sidebar .main-menu > .slide > .side-menu__item > .side-menu__label {
+  display: none !important;
+}
+
+/* Keep submenu titles visible */
+.app-sidebar .slide-menu .side-menu__label {
+  display: inline-block !important;
+}

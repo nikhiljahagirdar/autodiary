@@ -14,15 +14,29 @@ interface BasicProps { }
 const Basic: React.FC<BasicProps> = () => {
 
     const [values, setValues] = useState<any>({
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
-        showPassword: false
+        confirmPassword: '',
+        showPassword: false,
+        showConfirmPassword: false
     });
 
     const [errors, setErrors] = useState<any>({});
 
     const validate = () => {
         const newErrors:any = {};
+
+        // First name validation
+        if (!values.firstName) {
+            newErrors.firstName = "First name is required.";
+        }
+
+        // Last name validation
+        if (!values.lastName) {
+            newErrors.lastName = "Last name is required.";
+        }
 
         // Email validation
         if (!values.email) {
@@ -36,6 +50,13 @@ const Basic: React.FC<BasicProps> = () => {
             newErrors.password = "Password is required.";
         } else if (values.password.length < 6) {
             newErrors.password = "Password must be at least 6 characters.";
+        }
+
+        // Confirm password validation
+        if (!values.confirmPassword) {
+            newErrors.confirmPassword = "Confirm password is required.";
+        } else if (values.password !== values.confirmPassword) {
+            newErrors.confirmPassword = "Passwords do not match.";
         }
 
         setErrors(newErrors);
@@ -83,13 +104,39 @@ const Basic: React.FC<BasicProps> = () => {
                                     <p className="mb-4 text-muted fw-normal">Join us by creating a free account !</p>
                                 </div>
                                 <Form onSubmit={handleSubmit}>
-                                    <Row className=" gy-3">
+                                    <Row className="gy-3">
+                                        <Col xl={6}>
+                                            <Form.Label htmlFor="signup-firstname" className="text-default">First Name</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                className="form-control"
+                                                id="signup-firstname"
+                                                placeholder="Enter First Name"
+                                                value={values.firstName}
+                                                onChange={(e) => setValues({ ...values, firstName: e.target.value })}
+                                                isInvalid={!!errors.firstName}
+                                            />
+                                            <Form.Control.Feedback type="invalid">{errors.firstName}</Form.Control.Feedback>
+                                        </Col>
+                                        <Col xl={6}>
+                                            <Form.Label htmlFor="signup-lastname" className="text-default">Last Name</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                className="form-control"
+                                                id="signup-lastname"
+                                                placeholder="Enter Last Name"
+                                                value={values.lastName}
+                                                onChange={(e) => setValues({ ...values, lastName: e.target.value })}
+                                                isInvalid={!!errors.lastName}
+                                            />
+                                            <Form.Control.Feedback type="invalid">{errors.lastName}</Form.Control.Feedback>
+                                        </Col>
                                         <Col xl={12}>
-                                            <Form.Label htmlFor="signin-email" className="text-default">Email</Form.Label>
+                                            <Form.Label htmlFor="signup-email" className="text-default">Email</Form.Label>
                                             <Form.Control
                                                 type="email"
-                                                className="form-control "
-                                                id="signup-firstname"
+                                                className="form-control"
+                                                id="signup-email"
                                                 placeholder="Enter Email ID"
                                                 value={values.email}
                                                 onChange={(e) => setValues({ ...values, email: e.target.value })}
@@ -97,12 +144,12 @@ const Basic: React.FC<BasicProps> = () => {
                                             />
                                             <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
                                         </Col>
-                                        <Col xl={12} className="mb-2">
-                                            <Form.Label htmlFor="signin-password" className="text-default d-block">Password</Form.Label>
+                                        <Col xl={12}>
+                                            <Form.Label htmlFor="signup-password" className="text-default d-block">Password</Form.Label>
                                             <div className="position-relative">
                                                 <Form.Control
                                                     type={values.showPassword ? "text" : "password"}
-                                                    className="form-control "
+                                                    className="form-control"
                                                     id="signup-password"
                                                     placeholder="Password"
                                                     value={values.password}
@@ -117,11 +164,43 @@ const Basic: React.FC<BasicProps> = () => {
                                                         <i className="ri-eye-off-line align-middle"></i>
                                                     )}
                                                 </Link>
-                                                <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback> </div>
+                                                <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
+                                            </div>
+                                        </Col>
+                                        <Col xl={12} className="mb-2">
+                                            <Form.Label htmlFor="signup-confirmpassword" className="text-default d-block">Confirm Password</Form.Label>
+                                            <div className="position-relative">
+                                                <Form.Control
+                                                    type={values.showConfirmPassword ? "text" : "password"}
+                                                    className="form-control"
+                                                    id="signup-confirmpassword"
+                                                    placeholder="Confirm Password"
+                                                    value={values.confirmPassword}
+                                                    onChange={(e) => setValues({ ...values, confirmPassword: e.target.value })}
+                                                    isInvalid={!!errors.confirmPassword}
+                                                />
+                                                <Link scroll={false} href="#!" className="show-password-button text-muted"
+                                                    onClick={() => setValues((prev:any) => ({ ...prev, showConfirmPassword: !prev.showConfirmPassword }))}>
+                                                    {values.showConfirmPassword ? (
+                                                        <i className="ri-eye-line align-middle"></i>
+                                                    ) : (
+                                                        <i className="ri-eye-off-line align-middle"></i>
+                                                    )}
+                                                </Link>
+                                                <Form.Control.Feedback type="invalid">{errors.confirmPassword}</Form.Control.Feedback>
+                                            </div>
+                                            <div className="mt-2">
+                                                <div className="form-check">
+                                                    <input className="form-check-input" type="checkbox" id="defaultCheck1" />
+                                                    <label className="form-check-label" htmlFor="defaultCheck1">
+                                                        By creating a account you agree to our <Link scroll={false} href="#!" className="text-primary">Terms & Conditions</Link> and <Link scroll={false} href="#!" className="text-primary">Privacy Policy</Link>
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </Col>
                                     </Row>
                                     <div className="d-grid mt-3">
-                                        <SpkButton Buttontype="submit" Customclass="btn btn-primary">Sign In</SpkButton>
+                                        <SpkButton Buttontype="submit" Customclass="btn btn-primary">Create Account</SpkButton>
                                     </div>
                                 </Form>
                                 <div className="text-center my-3 authentication-barrier">

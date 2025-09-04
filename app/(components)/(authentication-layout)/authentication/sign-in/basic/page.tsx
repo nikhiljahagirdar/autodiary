@@ -14,8 +14,8 @@ interface BasicProps { }
 const Basic: React.FC<BasicProps> = () => {
 
     const [values, setValues] = useState<any>({
-        email: '',
-        password: '',
+        email: 'admin@autodiary.com',
+        password: 'password123',
         showPassword: false
     });
 
@@ -89,7 +89,7 @@ const Basic: React.FC<BasicProps> = () => {
                                             <Form.Control
                                                 type="email"
                                                 className="form-control "
-                                                id="signup-firstname"
+                                                id="signin-email"
                                                 placeholder="Enter Email ID"
                                                 value={values.email}
                                                 onChange={(e) => setValues({ ...values, email: e.target.value })}
@@ -103,7 +103,7 @@ const Basic: React.FC<BasicProps> = () => {
                                                 <Form.Control
                                                     type={values.showPassword ? "text" : "password"}
                                                     className="form-control "
-                                                    id="signup-password"
+                                                    id="signin-password"
                                                     placeholder="Password"
                                                     value={values.password}
                                                     onChange={(e) => setValues({ ...values, password: e.target.value })}

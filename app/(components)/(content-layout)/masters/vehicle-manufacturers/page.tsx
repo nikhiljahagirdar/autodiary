@@ -20,6 +20,7 @@ const VehicleManufacturers: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [selectAll, setSelectAll] = useState(false);
+  const [exportDropdownOpen, setExportDropdownOpen] = useState(false);
   const itemsPerPage = 10;
 
   const manufacturersData = [
@@ -104,11 +105,35 @@ const VehicleManufacturers: React.FC = () => {
               style={{ maxWidth: '300px' }}
             />
           <div className="d-flex gap-2">
-            <select className="form-select" style={{backgroundColor: '#c9c9c9ff', color: 'white', border: '1px solid #4b5563', width: 'auto'}}>
-              <option value="">📥 Export</option>
-              <option value="csv">📄 Export to CSV</option>
-              <option value="excel">📊 Export to Excel</option>
-            </select>
+            <div className="position-relative">
+              <button 
+                className="btn d-flex align-items-center gap-2" 
+                style={{backgroundColor: '#6b7280', color: 'white', border: '1px solid #d1d1d1ff'}}
+                onClick={() => setExportDropdownOpen(!exportDropdownOpen)}
+              >
+                📥 Export
+                <i className={`fas fa-chevron-${exportDropdownOpen ? 'up' : 'down'}`}></i>
+              </button>
+              {exportDropdownOpen && (
+                <div 
+                  className="position-absolute bg-white border rounded shadow-sm mt-1" 
+                  style={{top: '100%', left: 0, minWidth: '160px', zIndex: 1000}}
+                >
+                  <button 
+                    className="btn btn-link text-start w-100 text-decoration-none text-dark p-2 border-0"
+                    onClick={() => {setExportDropdownOpen(false); /* handle CSV export */}}
+                  >
+                    📄 Export to CSV
+                  </button>
+                  <button 
+                    className="btn btn-link text-start w-100 text-decoration-none text-dark p-2 border-0"
+                    onClick={() => {setExportDropdownOpen(false); /* handle Excel export */}}
+                  >
+                    📊 Export to Excel
+                  </button>
+                </div>
+              )}
+            </div>
             <button className="btn" style={{backgroundColor: '#000000', color: 'white', border: '1px solid #000000'}}>
               <i className="fas fa-plus me-1"></i>Add Manufacturers
             </button>
