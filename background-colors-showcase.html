@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Colors Used in Vyzor Project</title>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fd;
+            color: #011a42;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #000;
+        }
+        .color-section {
+            margin-bottom: 40px;
+        }
+        .color-section h2 {
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .color-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8ee;
+        }
+        .color-sample {
+            width: 100%;
+            height: 60px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #e2e8ee;
+        }
+        .color-info {
+            font-size: 14px;
+        }
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .color-value {
+            color: #666;
+            font-family: monospace;
+        }
+        .dark-mode {
+            background-color: #161623;
+            color: rgba(255,255,255,0.8);
+        }
+        .dark-mode .color-card {
+            background: #262634;
+            border-color: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Background Colors Used in Vyzor Project</h1>
+        
+        <!-- Primary Colors -->
+        <div class="color-section">
+            <h2>Primary & Brand Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #000000;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary Black</div>
+                        <div class="color-value">#000000 / rgb(0, 0, 0)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #ff49cd;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Secondary Pink</div>
+                        <div class="color-value">#ff49cd / rgb(255, 73, 205)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body & Layout Colors -->
+        <div class="color-section">
+            <h2>Body & Layout Background Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #f8f9fd;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Default Body Background</div>
+                        <div class="color-value">#f8f9fd / rgb(248, 249, 253)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #f9f7fc;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Default Background</div>
+                        <div class="color-value">#f9f7fc</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #ffffff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">White Background</div>
+                        <div class="color-value">#ffffff</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #c9d3da;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light Gray Custom</div>
+                        <div class="color-value">#c9d3da</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #f8f9fa;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Card Background (from active file)</div>
+                        <div class="color-value">#f8f9fa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Colors -->
+        <div class="color-section">
+            <h2>Status & Alert Background Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #32d484;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Success Green</div>
+                        <div class="color-value">#32d484 / rgb(50, 212, 132)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #ff6757;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Danger Red</div>
+                        <div class="color-value">#ff6757 / rgb(255, 103, 87)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #fdaf22;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warning Orange</div>
+                        <div class="color-value">#fdaf22 / rgb(253, 175, 34)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #00c9ff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Info Blue</div>
+                        <div class="color-value">#00c9ff / rgb(0, 201, 255)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #faf8fd;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light Background</div>
+                        <div class="color-value">#faf8fd / rgb(250, 248, 253)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #0a0a0a;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Background</div>
+                        <div class="color-value">#0a0a0a / rgb(10, 10, 10)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extended Color Palette -->
+        <div class="color-section">
+            <h2>Extended Color Palette</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #fa8128;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Orange</div>
+                        <div class="color-value">#fa8128 / rgb(250, 129, 40)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #ff69b4;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Pink</div>
+                        <div class="color-value">#ff69b4 / rgb(255, 105, 180)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #35b5aa;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Teal</div>
+                        <div class="color-value">#35b5aa / rgb(53, 181, 170)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #be2beb;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Purple</div>
+                        <div class="color-value">#be2beb / rgb(190, 43, 235)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #00c9a7;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Green</div>
+                        <div class="color-value">#00c9a7 / rgb(0, 201, 167)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gray Scale -->
+        <div class="color-section">
+            <h2>Gray Scale Backgrounds</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #f9fafb;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 1 (Lightest)</div>
+                        <div class="color-value">#f9fafb</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #f2f4f5;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 2</div>
+                        <div class="color-value">#f2f4f5</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #e6eaeb;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 3</div>
+                        <div class="color-value">#e6eaeb</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #dbdfe1;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 4</div>
+                        <div class="color-value">#dbdfe1</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #949eb7;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 5</div>
+                        <div class="color-value">#949eb7</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #7987a1;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 6</div>
+                        <div class="color-value">#7987a1</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #4d5875;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 7</div>
+                        <div class="color-value">#4d5875</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #383853;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 8</div>
+                        <div class="color-value">#383853</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #323251;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 9 (Darkest)</div>
+                        <div class="color-value">#323251</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dark Mode Colors -->
+        <div class="color-section">
+            <h2>Dark Mode Background Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #161623;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Body Background</div>
+                        <div class="color-value">#161623 / rgb(22, 22, 35)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #262634;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Secondary Background</div>
+                        <div class="color-value">#262634 / rgb(38, 38, 52)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #110f0f;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Gray 1</div>
+                        <div class="color-value">#110f0f</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #17171c;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Gray 2</div>
+                        <div class="color-value">#17171c</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transparent Backgrounds -->
+        <div class="color-section">
+            <h2>Transparent Background Variations</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: rgba(0,0,0,0.1); border: 1px solid #ccc;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary 10% Opacity</div>
+                        <div class="color-value">rgba(0,0,0,0.1)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: rgba(0,0,0,0.2); border: 1px solid #ccc;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary 20% Opacity</div>
+                        <div class="color-value">rgba(0,0,0,0.2)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: rgba(0,0,0,0.5); border: 1px solid #ccc;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary 50% Opacity</div>
+                        <div class="color-value">rgba(0,0,0,0.5)</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: rgba(255,255,255,0.1); border: 1px solid #ccc;"></div>
+                    <div class="color-info">
+                        <div class="color-name">White 10% Opacity</div>
+                        <div class="color-value">rgba(255,255,255,0.1)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gradient Backgrounds -->
+        <div class="color-section">
+            <h2>Gradient Backgrounds</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background: linear-gradient(to bottom right, #000000 0%, #ff49cd 100%);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary Gradient</div>
+                        <div class="color-value">Black to Pink</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background: linear-gradient(to bottom right, #ff49cd 0%, #7289FF 100%);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Secondary Gradient</div>
+                        <div class="color-value">Pink to Blue</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background: linear-gradient(to bottom right, #32d484 0%, #009CA4 100%);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Success Gradient</div>
+                        <div class="color-value">Green to Teal</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background: linear-gradient(to bottom right, #fdaf22 0%, #9EA53C 100%);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warning Gradient</div>
+                        <div class="color-value">Orange to Yellow-Green</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Component Specific Backgrounds -->
+        <div class="color-section">
+            <h2>Component Specific Backgrounds</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #f5f6f7;"></div>
+                    <div class="color-info">
+                        <div class="color-name">List Hover/Focus Background</div>
+                        <div class="color-value">#f5f6f7</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #ffffff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Form Control Background</div>
+                        <div class="color-value">#ffffff</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #fff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Menu Background</div>
+                        <div class="color-value">#fff</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-sample" style="background-color: #fff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Header Background</div>
+                        <div class="color-value">#fff</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add toggle for dark mode preview
+        const toggleBtn = document.createElement('button');
+        toggleBtn.textContent = 'Toggle Dark Mode Preview';
+        toggleBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+        document.body.appendChild(toggleBtn);
+
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
