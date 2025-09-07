@@ -101,7 +101,7 @@ const Landing = () => {
     }, []);
 
     useEffect(() => {
-
+        // Set initial state immediately without delay
         const newState = {
             dataNavStyle: "menu-click",
             dataNavLayout: "horizontal",
@@ -111,7 +111,7 @@ const Landing = () => {
             dataHeaderStyles: '',
             bodyBg:'',
             bodyBg2:'',
-
+            toggled: 'open'
         }
         setState(newState);
 
@@ -125,7 +125,6 @@ const Landing = () => {
             }
             setState(newState)
         }
-
     }, [])
 
     useEffect(() => {
@@ -363,8 +362,8 @@ const Landing = () => {
                             {/* <!-- Start::header-link|switcher-icon --> */}
 
                             <div className="btn-list d-lg-none d-flex">
-                                <Link scroll={false} href="/authentication/sign-up/basic" className="btn btn-primary-light">
-                                    Sign Up
+                                <Link scroll={false} href="/signin" className="btn btn-primary-light">
+                                    Sign In
                                 </Link>
                                 <SpkButton Buttonvariant='success' onClickfunc={handleShow} Customclass="btn-icon switcher-icon d-flex align-items-center justify-content-center" data-bs-toggle="offcanvas"
                                     data-bs-target="#switcher-canvas">
@@ -520,7 +519,7 @@ const Landing = () => {
                             </svg></div>
                             <div className="d-lg-flex d-none align-items-center">
                                 <div className="btn-list d-xl-flex d-none">
-                                    <Link scroll={false} href="/authentication/sign-up/basic" className="btn btn-wave btn-primary border">
+                                    <Link scroll={false} href="/signin" className="btn btn-wave btn-primary border">
                                         Login / Register
                                     </Link>
                                 </div>

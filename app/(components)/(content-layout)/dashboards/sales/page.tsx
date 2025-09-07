@@ -10,12 +10,23 @@ import SpkTables from '@/shared/@spk-reusable-components/reusable-tables/spk-tab
 import { Activities, Channels, Customers, Orders, Overviewoptions, Overviewseries, Products, SalesCard, Stats, Transactionsdata, Visitorsoptions, Visitorsseries } from '@/shared/data/dashboards/salesdata'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Card, Col, Dropdown, Form, ListGroup, Pagination, Row } from 'react-bootstrap'
 
 interface SalesProps { }
 
 const Sales: React.FC<SalesProps> = () => {
+
+  useEffect(() => {
+    const html = document.documentElement;
+    html.style.setProperty('--primary-rgb', '0, 0, 0');
+    html.setAttribute('data-page-style', 'modern');
+    
+    return () => {
+      html.style.removeProperty('--primary-rgb');
+      html.setAttribute('data-page-style', 'flat');
+    };
+  }, []);
 
   const today = new Date();
   const nextWeek = new Date();

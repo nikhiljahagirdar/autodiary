@@ -5,11 +5,20 @@ import Seo from "@/shared/layouts-components/seo/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 
 const SignUp: React.FC = () => {
+    const bodyRef: any = useRef(null);
+
+    useEffect(() => {
+        bodyRef.current = document.body
+        bodyRef.current.classList.add('bg-white');
+        return () => {
+            bodyRef.current.classList.remove('bg-white');
+        };
+    }, []);
 
     const [values, setValues] = useState<any>({
         firstName: '',
@@ -86,20 +95,13 @@ const SignUp: React.FC = () => {
         <Fragment>
             <Seo title="Sign Up" />
 
-            <div className="authentication-basic-background">
-                <Image fill src="../assets/images/media/backgrounds/9.png" alt="" />
-            </div>
-
-            <div className="container">
-                <Row className="justify-content-center align-items-center authentication authentication-basic h-100">
-                    <Col xxl={4} xl={5} lg={6} md={6} sm={8} className="col-12">
-                        <Card className="custom-card border-0 my-4">
-                            <Card.Body className="p-5">
-                                <div className="mb-4">
-                                    <Link scroll={false} href="/dashboards/sales">
-                                        <Image fill src="../assets/images/brand-logos/toggle-logo.png" alt="logo" className="desktop-dark" />
-                                    </Link>
-                                </div>
+            <div className="container-fluid">
+                <Row className="authentication authentication-cover-main mx-0">
+                    <Col xxl={6} xl={7} lg={12}>
+                        <Row className="justify-content-center align-items-center h-100">
+                            <Col xxl={6} xl={7} lg={7} md={7} sm={8} className="col-12">
+                                <Card className="custom-card rectangle2">
+                                    <Card.Body className="p-5">
                                 <div>
                                     <h4 className="mb-1 fw-semibold">Sign Up</h4>
                                     <p className="mb-4 text-muted fw-normal">Join us by creating a free account !</p>
@@ -230,9 +232,31 @@ const SignUp: React.FC = () => {
                                 </div>
                                 <div className="text-center mt-3 fw-medium">
                                     Already have a account? <Link scroll={false} href="/signin" className="text-primary">Sign In</Link>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col xxl={6} xl={5} lg={12} className="d-xl-block d-none px-0">
+                        <div className="authentication-cover overflow-hidden">
+                            <div className="authentication-cover-logo">
+                                <Link scroll={false} href="/dashboards/sales">
+                                    <Image fill src="../assets/images/brand-logos/toggle-logo.png" alt="logo" className="desktop-dark" />
+                                </Link>
+                            </div>
+                            <div className="authentication-cover-background">
+                                <Image fill src="../assets/images/media/backgrounds/9.png" alt="" />
+                            </div>
+                            <div className="authentication-cover-content">
+                                <div className="p-5">
+                                    <h3 className="fw-semibold lh-base">Join Our Community</h3>
+                                    <p className="mb-0 text-muted fw-medium">Create your account and start your journey with us today.</p>
                                 </div>
-                            </Card.Body>
-                        </Card>
+                                <div>
+                                    <Image fill src="../assets/images/media/media-72.png" alt="" className="img-fluid" />
+                                </div>
+                            </div>
+                        </div>
                     </Col>
                 </Row>
             </div>

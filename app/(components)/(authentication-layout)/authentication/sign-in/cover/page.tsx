@@ -64,12 +64,13 @@ const Cover: React.FC<CoverProps> = () => {
         <Fragment>
             <Seo title="Signin-Cover" />
 
-            <Row className="authentication authentication-cover-main mx-0">
-                <Col xxl={9} xl={9}>
-                    <Row className="justify-content-center align-items-center h-100">
-                        <Col xxl={4} xl={5} lg={6} md={6} sm={8} className="col-12">
-                            <Card className="custom-card border-0 shadow-none my-4">
-                                <Card.Body className="p-5">
+            <div className="container-fluid">
+                <Row className="authentication authentication-cover-main mx-0">
+                    <Col xxl={6} xl={7} lg={12}>
+                        <Row className="justify-content-center align-items-center h-100">
+                            <Col xxl={6} xl={7} lg={7} md={7} sm={8} className="col-12">
+                                <Card className="custom-card rectangle2">
+                                    <Card.Body className="p-5">
                                     <div>
                                         <h4 className="mb-1 fw-semibold">Hi,Welcome back!</h4>
                                         <p className="mb-4 text-muted fw-normal">Please enter your credentials</p>

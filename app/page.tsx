@@ -9,39 +9,18 @@ export default function Home() {
   useEffect(() => {
     bodyRef.current = document.body
     bodyRef.current?.classList.add('landing-body')
+    
+    const html = document.documentElement;
+    html.removeAttribute('data-bg-img');
+    
     return () => {
       bodyRef.current?.classList.remove('landing-body')
     }
   }, []);
 
-  const getDocumentElement = (): HTMLElement => {
-    return document.documentElement;
-  };
-
-  useEffect(() => {
-    const html = getDocumentElement()
-    html.removeAttribute('data-bg-img');
-    
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === "data-bg-img") {
-          html.removeAttribute('data-bg-img');
-        }
-      });
-    });
-    
-    observer.observe(html, { attributes: true });
-    
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <Fragment>
-      <div>
-        <Landing />
-      </div>
+      <Landing />
       <Backtotop />
     </Fragment>
   )

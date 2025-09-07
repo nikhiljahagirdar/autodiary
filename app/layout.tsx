@@ -12,7 +12,11 @@ const RootLayout = ({ children, }: any) => {
 
   return (
     <html lang="en">
-      <body>
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className="">
         <Provider store={store}>
           <Initialload.Provider value={{ pageloading, setpageloading }}>
             {children}
