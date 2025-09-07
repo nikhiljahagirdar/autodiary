@@ -5,7 +5,7 @@ import Seo from "@/shared/layouts-components/seo/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { Fragment, useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -92,7 +92,7 @@ const SignUp: React.FC = () => {
     };
 
     return (
-        <Fragment>
+        <div>
             <Seo title="Sign Up" />
 
             <div className="container-fluid">
@@ -232,6 +232,7 @@ const SignUp: React.FC = () => {
                                 </div>
                                 <div className="text-center mt-3 fw-medium">
                                     Already have a account? <Link scroll={false} href="/signin" className="text-primary">Sign In</Link>
+                                </div>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -261,7 +262,7 @@ const SignUp: React.FC = () => {
                 </Row>
             </div>
                 <ToastContainer />
-        </Fragment>
+        </div>
     )
 };
 
