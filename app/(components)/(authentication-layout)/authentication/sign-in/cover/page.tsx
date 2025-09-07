@@ -5,7 +5,7 @@ import Seo from "@/shared/layouts-components/seo/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Fragment, useState } from "react"
+import { useState } from "react"
 import { Card, Col, Form, Row } from "react-bootstrap";
 import { toast,ToastContainer } from "react-toastify";
 
@@ -61,7 +61,7 @@ const Cover: React.FC<CoverProps> = () => {
 
     return (
 
-        <Fragment>
+        <div>
             <Seo title="Signin-Cover" />
 
             <div className="container-fluid">
@@ -175,7 +175,8 @@ const Cover: React.FC<CoverProps> = () => {
                 </Col>
             </Row>
             <ToastContainer />
-        </Fragment>
+        </div>
+        </div>
     )
 }
 export default Cover;
