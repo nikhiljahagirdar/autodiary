@@ -1,0 +1,241 @@
+/* Custom Theme - Black Primary Color & Modern Style */
+
+:root {
+  /* Override primary color to black */
+  --primary-rgb: 0, 0, 0;
+  --primary-color: rgb(0, 0, 0);
+  --primary-border: rgb(0, 0, 0);
+  --primary01: rgba(0, 0, 0, 0.1);
+  --primary02: rgba(0, 0, 0, 0.2);
+  --primary03: rgba(0, 0, 0, 0.3);
+  --primary04: rgba(0, 0, 0, 0.4);
+  --primary05: rgba(0, 0, 0, 0.5);
+  --primary06: rgba(0, 0, 0, 0.6);
+  --primary07: rgba(0, 0, 0, 0.7);
+  --primary08: rgba(0, 0, 0, 0.8);
+  --primary09: rgba(0, 0, 0, 0.9);
+  --primary005: rgba(0, 0, 0, 0.05);
+}
+
+/* Modern page style overrides */
+[data-page-style=modern] {
+  --light-rgb: 255, 255, 255;
+  --custom-white: rgb(248, 249, 253);
+  --default-border: #e6ebf1;
+  --input-border: rgba(0, 0, 0, 0.1);
+}
+
+[data-page-style=modern] body {
+  background-color: #fff;
+}
+
+[data-page-style=modern] .card.custom-card {
+  box-shadow: none;
+  background-color: rgb(243, 246, 248);
+  border-radius: 0.5rem;
+}
+
+[data-page-style=modern] .dropdown-menu {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Black primary color for buttons and interactive elements */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Primary color for links and accents */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.border-primary {
+  border-color: var(--primary-color) !important;
+}
+
+/* Active menu items */
+.side-menu__item.active {
+  background-color: var(--primary01) !important;
+  color: var(--primary-color) !important;
+}
+
+.side-menu__item.active .side-menu__icon,
+.side-menu__item.active .side-menu__label {
+  color: var(--primary-color) !important;
+}
+
+/* Form controls with black accent */
+.form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem var(--primary01) !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Progress bars */
+.progress-bar {
+  background-color: var(--primary-color) !important;
+}
+
+/* Badges */
+.badge.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+/* Modern card styling */
+.card.custom-card {
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card.custom-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Modern button styling */
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Modern input styling */
+.form-control,
+.form-select {
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern table styling */
+.table {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 600;
+}
+
+/* Modern navigation */
+.app-sidebar {
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff !important;
+}
+
+.app-sidebar .main-sidebar {
+  background-color: #ffffff !important;
+}
+
+.app-header {
+  border-radius: 0 0 1rem 1rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Modern alerts */
+.alert {
+  border-radius: 0.75rem;
+  border: none;
+}
+
+/* Modern modals */
+.modal-content {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Modern pagination */
+.page-link {
+  border-radius: 0.5rem;
+  margin: 0 2px;
+  border: 1px solid #e2e8f0;
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Modern dropdown */
+.dropdown-menu {
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Modern tabs */
+.nav-tabs .nav-link {
+  border-radius: 0.5rem 0.5rem 0 0;
+  border: none;
+  background-color: transparent;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* Scrollbar styling for modern look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Menu icon hover square background */
+.btn-icon:hover,
+.btn-icon:focus {
+  border-radius: 6px !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
